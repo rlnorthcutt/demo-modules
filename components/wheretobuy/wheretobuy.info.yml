@@ -1,0 +1,23 @@
+name: Where to Buy
+machine_name: wheretobuy
+type: pdb
+core: '8.x'
+description: 'Where to Buy Component'
+package: Vue
+module_status: active
+presentation: vue
+template: index.htm
+add_css:
+  header:
+    component:
+      'wheretobuy.css': {}
+add_js:
+  footer:
+    'wheretobuy.js': {}
+    'https://unpkg.com/axios/dist/axios.min.js': { type: external, minified: true }
+configuration:
+  brand:
+    type: textfield
+    title: 'Enter the brand ID for the product lookup'
+    default_value: 1
+ 

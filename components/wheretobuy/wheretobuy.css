@@ -1,0 +1,57 @@
+.store-item {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  margin-bottom: 1rem;
+  margin-right: 1rem;
+  min-width: 150px;
+  max-width: 250px;
+  display: inline-block;
+  border: solid thin #ccc;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  font-size: 2rem;
+  text-align: center;
+  background-color: #e1e2e4;
+  margin-left: 1rem;
+  margin-top: 1rem;
+}
+
+.store-amazon:before {
+  content: url(logos/amazon.png);
+}
+
+.store-primepantry:before {
+  content: url(logos/primepantry.png);
+}
+
+.store-riteaid:before {
+  content: url(logos/riteaid.png);
+}
+
+.store-jet:before {
+  content: url(logos/jet.png);
+}
+
+.store-walgreens:before {
+  content: url(logos/walgreens.png);
+}
+
+.store-walmart:before {
+  content: url(logos/walmart.png);
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+.flex > div {
+  flex: 1;
+}
+
+.lookup-form .left {
+  text-align: right;
+  margin-right: 1rem;
+}

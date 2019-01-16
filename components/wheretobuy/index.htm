@@ -1,0 +1,64 @@
+<!-- HACK - I shouldn't need to declare these libraries here. That should be done in the .info file. -->
+<script src="https://unpkg.com/vue/dist/vue.min.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<div id="app">
+    <h2>Where to buy</h2>
+
+    <!-- Screen 1 - product selection form -->
+    <select v-model="selected" v-if="selected == 'NONE'">
+        <option value="NONE">Select one</option>
+        <option v-for="item, key in products" :value="key">{{item.title_1}}</option>
+    </select>
+
+    <!-- Screen 2 - product  results -->
+    <template v-if="selected != 'NONE'">
+        <button v-on:click="selected = 'NONE'">Find another product</button>
+        <div class="results">
+        <h2>{{products[selected].title_1}}</h2>
+        <div class="store-list"> 
+            <h3>Online retailers</h3>
+            <p>Purchase this product from available vendors that have it in stock.</p>
+            
+            <div class="store-item" v-if="products[selected].field_amazon">
+                <div class="store-amazon">
+                <div>{{products[selected].field_amazon}}</div>
+                </div>
+            </div>
+            <div class="store-item" v-if="products[selected].field_amazon_prime_pantry">
+                <div class="store-primepantry">
+                    <div>{{products[selected].field_amazon_prime_pantry}}</div>
+                </div>
+            </div>
+            <div class="store-item" v-if="products[selected].field_jet">
+                <div class="store-jet">
+                    <div>{{products[selected].field_jet}}</div>
+                </div>
+            </div>
+            <div class="store-item" v-if="products[selected].field_rite_aid">
+                <div class="store-riteaid">
+                    <div>{{products[selected].field_rite_aid}}</div>
+                </div>
+            </div>
+            <div class="store-item" v-if="products[selected].field_walgreens">
+                <div class="store-walgreens">
+                    <div>{{products[selected].field_walgreens}}</div>
+                </div>
+            </div>
+            <div class="store-item" v-if="products[selected].field_walmart">
+                <div class="store-walmart">
+                <div>{{products[selected].field_walmart}}</div>
+            </div>
+        </div>
+
+        <div class="store-lookup">
+            <h3>Find in store</h3>
+            <p>Enter a Postal Code to find stores which may carry this product. Product availability varies by store location. Check with store location for product availability.</p>
+            
+            <div class="lookup-form flex">
+                <div class="left"><input type="text" ></div>
+                <div class="right"><button>Find stores</button></div>
+                </div> 
+        </div>
+        </div>
+    </template>
+</div>
