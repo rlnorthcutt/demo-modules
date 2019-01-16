@@ -12,9 +12,10 @@ add_css:
     component:
       'wheretobuy.css': {}
 add_js:
+  header:
+    'https://unpkg.com/axios/dist/axios.min.js': { type: external, minified: true }
   footer:
     'wheretobuy.js': {}
-    'https://unpkg.com/axios/dist/axios.min.js': { type: external, minified: true }
 configuration:
   brand:
     type: textfield
